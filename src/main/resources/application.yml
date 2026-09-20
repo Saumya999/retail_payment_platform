@@ -1,3 +1,31 @@
 spring:
   application:
     name: dataengineering
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/retail_pay
+    username: data_engg
+    password: data_engg
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+
+    properties:
+      hibernate:
+        jdbc:
+          batch_size: 100
+        order_inserts: true
+        order_updates: true
+
+  flyway:
+    enabled: true
+    schemas: retail
+    default-schema: retail
+    locations: classpath:db/migration
+
+
+simulator:
+  customer:
+    enabled: false
+    batch-size: 100
