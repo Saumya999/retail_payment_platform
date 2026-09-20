@@ -10,5 +10,6 @@
 /dataSources.local.xml
 *.xml
 .idea
+target
 target/*
 target/classes
